@@ -1,0 +1,118 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.sqlitedatabaseapp.SearchResultsActivity" >
+
+    <!-- Header aligned to top -->
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="#FC9"
+        android:gravity="center" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="0sp"
+            android:text="@string/Fixed_Header"
+            android:textColor="#000"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/header"
+        android:layout_below="@+id/header"
+        android:gravity="left"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/labelSpinner2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/sector" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/sector_arrays"
+            android:prompt="@string/sector_prompt" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/header"
+        android:layout_below="@+id/header"
+        android:layout_marginTop="68dp"
+        android:gravity="left"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/labelSpinner1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/state" />
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/aus_state_list"
+            android:prompt="@string/state" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/header"
+        android:layout_below="@+id/header"
+        android:layout_marginTop="115dp"
+        android:gravity="left"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/labelSpinner4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/primary_secondary" />
+
+        <Switch
+            android:id="@+id/togglebutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOff="Secondary"
+            android:textOn="Primary" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/linearLayout2"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_marginLeft="78dp"
+        android:layout_marginTop="44dp"
+        android:text="Submit" />
+
+</RelativeLayout>
