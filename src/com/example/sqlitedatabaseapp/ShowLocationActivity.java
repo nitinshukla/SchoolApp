@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
@@ -17,6 +18,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.os.Build;
+import android.provider.Settings;
 
 public class ShowLocationActivity extends Activity implements LocationListener{
 	 private TextView latituteField;
@@ -34,6 +36,12 @@ public class ShowLocationActivity extends Activity implements LocationListener{
 	    locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 	    // Define the criteria how to select the locatioin provider -> use
 	    // default
+	    boolean statusOfGPS = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+		   System.out.println("statusOfGPS===>"+statusOfGPS);
+		   if (!statusOfGPS) {
+			   Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+			   startActivity(intent);
+			 } 
 	    Criteria criteria = new Criteria();
 	    provider = locationManager.getBestProvider(criteria, false);
 	    Location location = locationManager.getLastKnownLocation(provider);
