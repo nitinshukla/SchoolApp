@@ -1,35 +1,46 @@
 package com.example.sqlitedatabaseapp;
-
 import android.app.Activity;
-import android.app.ActionBar;
-import android.app.Fragment;
-import android.content.Context;
-import android.content.Intent;
-import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.os.Build;
-import android.provider.Settings;
 
-public class ShowLocationActivity extends Activity implements LocationListener{
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.maps.MapActivity;
+import com.google.android.maps.MapView;
+
+public class ShowLocationActivity extends MapActivity  implements LocationListener{
 	 private TextView latituteField;
 	  private TextView longitudeField;
 	  private LocationManager locationManager;
 	  private String provider;
+	  MapView mapView;
 	@Override
 	  public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.location_test_database);
-	    latituteField = (TextView) findViewById(R.id.TextView02);
+	    mapView = (MapView) findViewById(R.id.map);
+        mapView.setBuiltInZoomControls(true);
+        /*GoogleMap map = ((MapFragment) getFragmentManager()
+                .findFragmentById(R.id.map)).getMap();*/
+
+        LatLng sydney = new LatLng(-33.867, 151.206);
+
+        //mapView.setMyLocationEnabled(true);
+        //mapView.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 13));
+
+      //  mapView.addMarker(new MarkerOptions()
+        //        .title("Sydney")
+        //        .snippet("The most populous city in Australia.")
+        //        .position(sydney));
+        
+/*	    latituteField = (TextView) findViewById(R.id.TextView02);
 	    longitudeField = (TextView) findViewById(R.id.TextView04);
 
 	    // Get the location manager
@@ -53,15 +64,15 @@ public class ShowLocationActivity extends Activity implements LocationListener{
 	    } else {
 	      latituteField.setText("Location not available");
 	      longitudeField.setText("Location not available");
-	    }
+	    }*/
 	  }
 
 	  /* Request updates at startup */
-	  @Override
+/*	  @Override
 	  protected void onResume() {
 	    super.onResume();
 	    locationManager.requestLocationUpdates(provider, 400, 1, this);
-	  }
+	  }*/
 
 	  /* Remove the locationlistener updates when Activity is paused */
 	  @Override
@@ -96,4 +107,10 @@ public class ShowLocationActivity extends Activity implements LocationListener{
 	    Toast.makeText(this, "Disabled provider " + provider,
 	        Toast.LENGTH_SHORT).show();
 	  }
+
+	@Override
+	protected boolean isRouteDisplayed() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	} 
