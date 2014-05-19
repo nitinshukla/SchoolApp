@@ -101,16 +101,23 @@ public class SearchResultsActivity extends ListActivity {
 		// Handle action bar item clicks here. The action bar will
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
-	    switch (item.getItemId()) {
-        case R.id.action_search:
-            //openSearch();
-        	//startActivity(new Intent(Settings.ACTION_INPUT_METHOD_SETTINGS));
-            return true;
-        case R.id.action_settings:
-            //openSettings();
-            return true;
-        default:
-            return super.onOptionsItemSelected(item);
-    }
+//	    switch (item.getItemId()) {
+//        case R.id.action_search:
+//            //openSearch();
+//        	//startActivity(new Intent(Settings.ACTION_INPUT_METHOD_SETTINGS));
+//            return true;
+//        case R.id.action_settings:
+//            //openSettings();
+//            return true;
+//        default:
+//            return super.onOptionsItemSelected(item);
+//    }
+	    if (item.getItemId() == R.id.action_search) {
+	    	return true;
+	    } else if (item.getItemId() == R.id.action_settings) {
+	    	return true;
+	    } else{
+	    	return super.onOptionsItemSelected(item);
+	    }
 	}
 }
