@@ -56,5 +56,11 @@
     </string-array>
 
     <string name="title_activity_show_location">ShowLocationActivity</string>
-
+    <string name="store_car_location">Store My Location</string>
+    <string name="find_car">Find Me</string>
+    <string name="title_activity_main_database">MainDatabaseActivity</string>
+	<string name="Main_text">Map and compare schools, based on your current location. Show:!</string>
+	<string name="All_Nearby">All Nearby  ></string>
+	<string name="Primary">Primary  ></string>
+	<string name="Secondary">Secondary  ></string>
 </resources>

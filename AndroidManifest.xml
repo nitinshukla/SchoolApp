@@ -12,6 +12,9 @@
 		<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
 		<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
 		<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+		<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+		<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+		
 		
     <supports-screens
         android:anyDensity="true"
@@ -31,22 +34,52 @@
         <meta-data
             android:name="android.app.default_searchable"
             android:value=".SearchResultsActivity" />
+        
+        <activity
+            android:name="com.example.sqlitedatabaseapp.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.Light"
+            android:parentActivityName="com.example.sqlitedatabaseapp.TestDatabaseActivity" >
+<!--             <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter> -->
+        </activity>        
         <activity
             android:name="com.example.sqlitedatabaseapp.ShowLocationActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Holo.Light"
             android:parentActivityName="com.example.sqlitedatabaseapp.TestDatabaseActivity" >
-            <intent-filter>
+<!--              <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter> --> 
+        </activity>
+               <activity
+            android:name="com.example.sqlitedatabaseapp.MainDatabaseActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.Light" >
+               <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter> 
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
         </activity>
         <activity
             android:name="com.example.sqlitedatabaseapp.TestDatabaseActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Holo.Light" >
+<!--               <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter> -->
 
             <meta-data
                 android:name="android.app.searchable"
@@ -81,7 +114,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
-
+  
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.sqlitedatabaseapp.TestDatabaseActivity" />
