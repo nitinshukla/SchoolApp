@@ -1,8 +1,19 @@
 package com.example.sqlitedatabaseapp;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -12,11 +23,10 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
-import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,9 +42,8 @@ import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.maps.GeoPoint;
 
@@ -44,7 +53,7 @@ public class MainActivity extends Activity implements
 	private GoogleMap mMap;
 	private LocationManager locationManager;
 	private Location location = null;
-	private Button btnStoreCarLocation = null;
+	//private Button btnStoreCarLocation = null;
 	private Button findCar = null;
 	Context context;
 	private LatLng carPosition = null;
@@ -59,11 +68,22 @@ public class MainActivity extends Activity implements
 			* FASTEST_INTERVAL_IN_SECONDS;
 	 private TextView latituteField;
 	  private TextView longitudeField;
+	  private static final String LOG_TAG = "ExampleApp";
+
+	  private static final String PLACES_API_BASE = "https://maps.googleapis.com/maps/api/place";
+	  private static final String TYPE_AUTOCOMPLETE = "/autocomplete";
+	  private static final String OUT_JSON = "/json";
+
+	  private static final String API_KEY = "AIzaSyCdvCg0R-_rxj8biH7LPXcMHVT52xoCTHw";
+	  private String TAG ="Vik";
+	  private String[] placeName;
+	    private String[] imageUrl;
 	/*
 	 * Define a request code to send to Google Play services This code is
 	 * returned in Activity.onActivityResult
 	 */
 	private final static int CONNECTION_FAILURE_RESOLUTION_REQUEST = 9000;
+	private static final String school = "school";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -71,8 +91,8 @@ public class MainActivity extends Activity implements
 		//setContentView(R.layout.mycarlocator);
 		setContentView(R.layout.location_test_database);
 		context = this;
-		btnStoreCarLocation = (Button) findViewById(R.id.storeCarLocation);
-		findCar = (Button) findViewById(R.id.findmycar);
+		//btnStoreCarLocation = (Button) findViewById(R.id.storeCarLocation);
+		//findCar = (Button) findViewById(R.id.findmycar);
 
 		mMap = ((MapFragment) getFragmentManager().findFragmentById(
 				R.id.mapview)).getMap();
@@ -99,8 +119,11 @@ public class MainActivity extends Activity implements
 		}*/
 
 		// currentlatlang = new LatLng(29.528522, -98.57837);
+		//AsyncCallWS task = new AsyncCallWS();
+        //task.execute(); 
+        
 
-		btnStoreCarLocation.setOnClickListener(new OnClickListener() {
+/*		btnStoreCarLocation.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				location = getCurrentLocation();
@@ -123,17 +146,214 @@ public class MainActivity extends Activity implements
 				}
 				
 			}
-		});
+		});*/
 
-		findCar.setOnClickListener(new OnClickListener() {
+/*		findCar.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				takeToLocation(carPosition);
 			}
-		});
+		});*/
 
 	}
+	
+	private String makeUrl(double latitude, double longitude,String place) {
+        StringBuilder urlString = new StringBuilder("https://maps.googleapis.com/maps/api/place/search/json?");
 
+       if (place.equals("")) {
+    	   //StringBuilder sb = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
+    	   urlString.append("location=" + latitude + "," + longitude);
+           //sb.append("location=" + -33.7770 + "," + 151.0480);
+    	   urlString.append("&radius=8000"); // take care of spaces here 
+    	   urlString.append("&types="+school); //
+    	   urlString.append("&sensor=true"); //
+    	   urlString.append("&key="+API_KEY); //
+       } else {
+    	   //StringBuilder sb = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
+    	   urlString.append("location=" + latitude + "," + longitude);
+    	   urlString.append("&radius=5000"); // take care of spaces here 
+    	   urlString.append("&types="+school); //
+    	   urlString.append("&sensor=true"); //
+    	   urlString.append("&key="+API_KEY); //
+       }
+
+
+       return urlString.toString();
+   }
+	protected String getJSON(String url) {
+        return getUrlContents(url);
+    }
+	
+	private String getUrlContents(String theUrl) 
+    {
+        StringBuilder content = new StringBuilder();
+
+        try {
+            URL url = new URL(theUrl);
+            URLConnection urlConnection = url.openConnection();
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()), 8);
+            String line;
+            while ((line = bufferedReader.readLine()) != null) 
+            {
+                content.append(line + "\n");
+            }
+
+            bufferedReader.close();
+        }
+
+        catch (Exception e)
+        {
+
+            e.printStackTrace();
+
+        }
+
+        return content.toString();
+    }
+	
+	public List<Place> findPlaces(double latitude, double longitude,String placeSpacification) 
+    {
+		String urlString = makeUrl(latitude, longitude,placeSpacification);
+       
+        try {
+            String json = getJSON(urlString);
+
+            System.out.println(json);
+            JSONObject object = new JSONObject(json);
+            JSONArray array = object.getJSONArray("results");
+
+
+            ArrayList<Place> arrayList = new ArrayList<Place>();
+            for (int i = 0; i < array.length(); i++) {
+                try {
+                    Place place = Place.jsonToPontoReferencia((JSONObject) array.get(i));
+
+                    Log.v("Places Services ", ""+place);
+
+
+                    arrayList.add(place);
+                } catch (Exception e) {
+                }
+            }
+            return arrayList;
+        } catch (JSONException ex) {
+            Logger.getLogger(MainActivity.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+	
+	private class AsyncCallWS extends AsyncTask<List<Place>, List<Place>, List<Place>> {
+        @Override
+        protected List<Place> doInBackground(List... params) {
+            Log.i(TAG, "doInBackground");
+            List<Place> findPlaces =calculate();
+            //addLocation(findPlaces);
+            return findPlaces;
+        }
+
+  /*      private void addLocation(List<Place> findPlaces) {
+			// TODO Auto-generated method stub
+        	for (int i = 0; i < findPlaces.size(); i++) {
+
+                Place placeDetail = findPlaces.get(i);
+                addMarker(new LatLng(placeDetail.getLatitude(), placeDetail.getLongitude()), placeDetail.getName());
+
+          }
+        	
+		}*/
+
+		@Override
+        protected void onPostExecute(List<Place> findPlaces) {
+            Log.i(TAG, "onPostExecute");
+            LatLngBounds.Builder builder = new LatLngBounds.Builder();
+        	for (int i = 0; i < findPlaces.size(); i++) {
+
+                Place placeDetail = findPlaces.get(i);
+                addMarker(new LatLng(placeDetail.getLatitude(), placeDetail.getLongitude()), placeDetail.getName());
+                builder.include(new LatLng(placeDetail.getLatitude(), placeDetail.getLongitude()));
+
+          }
+        	CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngBounds(builder.build(), 10);
+        	mMap.moveCamera(cameraUpdate);
+   
+        }
+
+        @Override
+        protected void onPreExecute() {
+            Log.i(TAG, "onPreExecute");
+        }
+
+
+
+    }
+	
+	
+	public List<Place> calculate() 
+    {
+		location = getCurrentLocation();
+		List<Place> findPlaces = findPlaces(location.getLatitude(),location.getLongitude(),school);
+		placeName = new String[findPlaces.size()];
+        imageUrl = new String[findPlaces.size()];
+
+      for (int i = 0; i < findPlaces.size(); i++) {
+
+          Place placeDetail = findPlaces.get(i);
+          placeDetail.getIcon();
+          //Marker pos_Marker =  mMap.addMarker(new MarkerOptions().position(new LatLng(placeDetail.getLatitude(),placeDetail.getLongitude())).title(placeDetail.getName()).draggable(false));
+          //pos_Marker.showInfoWindow();
+        System.out.println(  placeDetail.getName());
+        placeName[i] =placeDetail.getName();
+
+        imageUrl[i] =placeDetail.getIcon();
+
+    }
+      return findPlaces;
+
+		//HttpURLConnection conn = null;
+		//StringBuilder jsonResults = new StringBuilder();
+		//String lat = "";
+		//ArrayList<Place> resultList = null;
+		// StringBuilder content = new StringBuilder();
+//		try {
+//			StringBuilder sb = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
+//            sb.append("location=" + -33.7770 + "," + 151.0480);
+//            sb.append("&radius=5000"); // take care of spaces here 
+//            sb.append("&types="+school); //
+//            sb.append("&sensor=true"); //
+//            sb.append("&key="+API_KEY); //
+//
+//	        URL url = new URL(sb.toString());
+//	        conn = (HttpURLConnection) url.openConnection();
+//	        //InputStreamReader in = new InputStreamReader(conn.getInputStream());
+//	        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(conn.getInputStream()), 8);
+//	        String line;
+//	       
+//	        // Load the results into a StringBuilder
+//	        /*int read;
+//	        char[] buff = new char[1024];
+//	        while ((read = in.read(buff)) != -1) {
+//	            jsonResults.append(buff, 0, read);
+//	            System.out.println("jsonResults==>"+jsonResults);
+//	        }*/
+//	        while ((line = bufferedReader.readLine()) != null) 
+//            {
+//                content.append(line + "\n");
+//            }
+//
+//            bufferedReader.close();
+//	    } catch (MalformedURLException e) {
+/*	        Log.e(LOG_TAG, "Error processing Places API URL", e);
+	        //return resultList;
+	    } catch (IOException e) {
+	        Log.e(LOG_TAG, "Error connecting to Places API", e);
+	        // return resultList;
+	    } finally {
+	        if (conn != null) {
+	            conn.disconnect();
+	        }
+	    }*/
+		//return content.toString();
+    }
 	public String ConvertPointToLocation(GeoPoint point) {   
 	    String address = "";
 	    Geocoder geoCoder = new Geocoder(
@@ -180,19 +400,19 @@ public class MainActivity extends Activity implements
 	public void addMarker(LatLng position, String title) {
 		mMap.addMarker(new MarkerOptions().position(position).title(title));
 		//pos_Marker.showInfoWindow();
-		mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(carPosition, 10));
-		mMap.animateCamera(CameraUpdateFactory.zoomTo(15),2000, null);
+		//mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(position, 10));
+		//mMap.animateCamera(CameraUpdateFactory.zoomTo(15),2000, null);
 	    latituteField.setText(String.valueOf(position.latitude));
 	    longitudeField.setText(String.valueOf(position.longitude));
 	    //Marker pos_Marker =  mMap.addMarker(new MarkerOptions().position(new LatLng(33.3000,-111.8333)).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_launcher)).title("Chandler").draggable(false));
-	    Marker pos_Marker =  mMap.addMarker(new MarkerOptions().position(new LatLng(33.3000,-111.8333)).title("Chandler").draggable(false));
+	    //Marker pos_Marker =  mMap.addMarker(new MarkerOptions().position(new LatLng(33.3000,-111.8333)).title("Chandler").draggable(false));
 		//map.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 13));
-		pos_Marker.showInfoWindow();
-		GeoPoint point = new GeoPoint(
+		//pos_Marker.showInfoWindow();
+		/*GeoPoint point = new GeoPoint(
 	            (int) (location.getLatitude() * 1E6), 
 	            (int) (location.getLongitude() * 1E6));				    
 	      String address = ConvertPointToLocation(point);
-	      Toast.makeText(getBaseContext(), address, Toast.LENGTH_SHORT).show();
+	      Toast.makeText(getBaseContext(), address, Toast.LENGTH_SHORT).show();*/
 		
 	}
 
@@ -244,9 +464,9 @@ public class MainActivity extends Activity implements
 		    //LatLng fromPosition = new LatLng(33.3000,111.8333);
 			//addMarker(fromPosition, "Chandler"); //33.3000° N, 111.8333° 
 			//Marker pos_Marker =  mMap.addMarker(new MarkerOptions().position(new LatLng(33.3000,-111.8333)).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_launcher)).title("Chandler").draggable(false));
-			Marker pos_Marker =  mMap.addMarker(new MarkerOptions().position(new LatLng(33.3000,-111.8333)).title("Chandler").draggable(false));
+			//Marker pos_Marker =  mMap.addMarker(new MarkerOptions().position(new LatLng(33.3000,-111.8333)).title("Chandler").draggable(false));
 			//map.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 13));
-			pos_Marker.showInfoWindow();
+			//pos_Marker.showInfoWindow();
 			GeoPoint point = new GeoPoint(
 		            (int) (location.getLatitude() * 1E6), 
 		            (int) (location.getLongitude() * 1E6));				    
@@ -317,7 +537,12 @@ public class MainActivity extends Activity implements
 		Toast.makeText(this, "Connected", Toast.LENGTH_SHORT).show();
 		mLocationClient.requestLocationUpdates(mLocationRequest, this);
 		location = getCurrentLocation();
-		takeToLocation(convertLocationtoLatLang(location));
+		if (location != null) {
+			takeToLocation(convertLocationtoLatLang(location));
+		}
+//		calculate();
+		AsyncCallWS task = new AsyncCallWS();
+        task.execute(); 
 
 	}
 
