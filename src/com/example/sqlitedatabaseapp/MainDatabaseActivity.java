@@ -3,11 +3,10 @@ package com.example.sqlitedatabaseapp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.TextView;
 
 public class MainDatabaseActivity extends Activity {
 
@@ -16,6 +15,30 @@ public class MainDatabaseActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.fragment_main_database);
 
+	    TextView allNearby =  (TextView) findViewById(R.id.AllNearby);
+	    TextView primary =  (TextView) findViewById(R.id.Primary);
+	    TextView secondary =  (TextView) findViewById(R.id.Secondary);
+
+	    allNearby.setOnClickListener(new View.OnClickListener() {
+	        @Override
+	        public void onClick(View v) {
+	        	doAllNearby(v);
+	        }
+	    });
+	    
+	    primary.setOnClickListener(new View.OnClickListener() {
+	        @Override
+	        public void onClick(View v) {
+	        	doAllNearbyPrimary(v);
+	        }
+	    });
+
+	    secondary.setOnClickListener(new View.OnClickListener() {
+	        @Override
+	        public void onClick(View v) {
+	        	doAllNearbySecondary(v);
+	        }
+	    });
 /*
 		if (savedInstanceState == null) {
 			getFragmentManager().beginTransaction()
@@ -43,30 +66,19 @@ public class MainDatabaseActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
-    public void doSmall(View v)  {
-	       // --- find the text view --
-	    	//super.onCreate(savedInstanceState);
-	    	//RelativeLayout relativeLayout = new RelativeLayout(this);
-
-	    	//RelativeLayout.LayoutParams lParams = new RelativeLayout.LayoutParams(
-	    	//                RelativeLayout.LayoutParams.FILL_PARENT,
-	    	//                RelativeLayout.LayoutParams.FILL_PARENT);
-
-	    	//create widgets
-	    	  //      TextView text = new TextView(this);
-	    	 //       text.setText("Simply dummy text");
-
-	    	        // finally add your TextView to the RelativeLayout
-	    	 //       relativeLayout.addView(text);
-
-	    	        // and set your layout like main content
-	    	  //      setContentView(relativeLayout, lParams);
-	    	//setContentView(R.layout.setting_activity_database);
-	    	//TextView txtView = (TextView) findViewById(R.id.footerText);
-	        // -- change text size --
-	       // txtView.setTextSize(14);
-	    	Intent intent = new Intent(this, SettingPageActivity.class);
+	
+    public void doAllNearby(View v)  {
+	    	Intent intent = new Intent(this, ShowLocationActivity.class);
 	    	startActivity(intent);
-	       //return;
-	   }
+    	}
+    
+    public void doAllNearbyPrimary(View v)  {
+    	Intent intent = new Intent(this, MainActivity.class);
+    	startActivity(intent);
+	}
+    
+    public void doAllNearbySecondary(View v)  {
+    	Intent intent = new Intent(this, SettingPageActivity.class);
+    	startActivity(intent);
+	}    
 }

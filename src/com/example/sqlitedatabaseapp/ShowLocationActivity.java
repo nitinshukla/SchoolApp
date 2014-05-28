@@ -30,7 +30,7 @@ public class ShowLocationActivity extends MapActivity  implements LocationListen
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.location_test_database);
 	    mapView = (MapView) findViewById(R.id.map);
-        mapView.setBuiltInZoomControls(true);
+        //mapView.setBuiltInZoomControls(true);
         /*GoogleMap map = ((MapFragment) getFragmentManager()
                 .findFragmentById(R.id.map)).getMap();*/
 
@@ -89,8 +89,9 @@ public class ShowLocationActivity extends MapActivity  implements LocationListen
 	  public void onLocationChanged(Location location) {
 	    int lat = (int) (location.getLatitude());
 	    int lng = (int) (location.getLongitude());
-	    latituteField.setText(String.valueOf(lat));
-	    longitudeField.setText(String.valueOf(lng));
+	    
+	   // latituteField.setText(String.valueOf(lat));
+	    //longitudeField.setText(String.valueOf(lng));
 	  }
 
 	  @Override
