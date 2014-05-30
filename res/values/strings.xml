@@ -63,4 +63,5 @@
 	<string name="All_Nearby">All Nearby</string>
 	<string name="Primary">Primary</string>
 	<string name="Secondary">Secondary</string>
+	<string name="searching_hint">City,State or Zip or School Name</string>
 </resources>

@@ -1,17 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:id="@+id/tableLayout1"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" 
     android:background="@drawable/back">
+  <TableRow
+        android:id="@+id/tableRow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dip" >
+   		<com.google.android.gms.ads.AdView android:id="@+id/adView"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         ads:adUnitId="pub-6976524541543816"
+                         ads:adSize="BANNER"/>
+
+
+    </TableRow>
+    <!-- just draw a red line -->
+    <View
+        android:layout_height="2dip"
+        android:background="#FF0000" />
  
-    <!-- 2 columns -->
     <TableRow
         android:id="@+id/tableRow1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="5dip" >
- 
         <TextView
         android:id="@+id/mainText"
         android:layout_width="wrap_content"
@@ -19,34 +35,6 @@
         android:text="@string/Main_text"/> 
 
     </TableRow>
- 
-  <!--       <TableRow
-        android:id="@+id/tableRow1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="5dip" 
-        android:background="@drawable/back">
- 
-        <TextView
-        android:id="@+id/mainText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Main_text" 
-        /> 
-
-    </TableRow> -->
-    <!-- edittext span 2 column -->
-   <!--  <TableRow
-        android:id="@+id/tableRow2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="5dip" >
- 
-        <EditText
-            android:id="@+id/editText1"
-            android:layout_span="2"
-            android:text="Column 1 &amp; 2" />
-    </TableRow> -->
  
     <!-- just draw a red line -->
     <View
@@ -86,156 +74,42 @@
         android:textAppearance="?android:attr/textAppearanceMedium"/>
 
     </TableRow>
+
      <TableRow
-        android:id="@+id/tableRow4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="2dip">
- 
+         android:id="@+id/tableRow4"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:padding="2dip" >
+
          <TextView
-        android:id="@+id/Secondary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Secondary" 
-        android:textColor="#4fa5d5"
-        android:layout_gravity="center"
-        android:textAppearance="?android:attr/textAppearanceMedium"/>
-
-    </TableRow>
-<!--     <TableRow
-        android:id="@+id/tableRow5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="2dip">
- 
-     <Button
-            android:id="@+id/button2"
-            android:text="Column 2" />
-
-    </TableRow>  -->   
-
-
-    <!-- 3 columns -->
-   <!--  <TableRow
-        android:id="@+id/tableRow3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="5dip" >
- 
-        <TextView
-            android:id="@+id/textView2"
-            android:text="Column 1"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
- 
-        <Button
-            android:id="@+id/button2"
-            android:text="Column 2" />
- 
-        <Button
-            android:id="@+id/button3"
-            android:text="Column 3" />
-    </TableRow> -->
- 
-    <!-- display this button in 3rd column via layout_column(zero based) -->
-<!--     <TableRow
-        android:id="@+id/tableRow4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="5dip" >
- 
-        <Button
-            android:id="@+id/button4"
-            android:layout_column="2"
-            android:text="Column 3" />
-    </TableRow> -->
- 
-    <!-- display this button in 2nd column via layout_column(zero based) -->
- <!--    <TableRow
-        android:id="@+id/tableRow5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="5dip" >
- 
-        <Button
-            android:id="@+id/button5"
-            android:layout_column="1"
-            android:text="Column 2" />
-    </TableRow> -->
- 
-</TableLayout>
-<!-- <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/tableLayout1"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@drawable/back" >
-
-
+             android:id="@+id/Secondary"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center"
+             android:text="@string/Secondary"
+             android:textAppearance="?android:attr/textAppearanceMedium"
+             android:textColor="#4fa5d5" />
+     </TableRow>
        <TableRow
-        android:id="@+id/tableRow1"
+        android:id="@+id/tableRow5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="5dip" >
- 
-         <TextView
-        android:id="@+id/mainText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Main_text" />  
+	
+	<EditText
+	    android:id="@+id/searchSchool"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:hint="@string/searching_hint"
+	    android:inputType="text" />
+    </TableRow>  
 
-         <TextView
-        android:id="@+id/textView2"
+	
+    <Button
+        android:id="@+id/btnSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/All_Nearby" />
-         
-         <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Primary"
+        android:text="Submit"
         android:onClick="doSmall" />
-         
-         <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Secondary" />
-         
-    </TableRow>
-    </TableLayout>
- 
-        
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/All_Nearby" /> 
-        
-     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Primary"
-        android:onClick="doSmall" />
-     
-         <Button
-        android:id="@+id/btnAllNearBy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/linearLayout2"
-        android:layout_below="@+id/linearLayout2"
-        android:layout_marginLeft="78dp"
-        android:layout_marginTop="44dp"
-        android:text="All Near By" 
-        android:onClick="doSmall"/>
-     
- <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Secondary" />            
-
-
-
- -->
+   
+</TableLayout>

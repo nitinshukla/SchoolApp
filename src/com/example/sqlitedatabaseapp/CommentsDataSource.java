@@ -112,6 +112,34 @@ public class CommentsDataSource {
 	    return schools;
 	  }
   
+  public List<Schools> getSchoolByState(String state,String locality) {
+	    List<Schools> schools = new ArrayList<Schools>();
+
+	    Cursor cursor = database.query(MySQLiteHelper.GREAT_SCHOOLS,
+	        allColumns, MySQLiteHelper.STATE + " = ? and " + MySQLiteHelper.SUBURB + " = ? ", new String[] { state,locality }, null, null, MySQLiteHelper.SCHOOL_NAME);
+
+	    cursor.moveToFirst();
+
+	    Schools school = null;
+	    if (cursor.moveToFirst()) {
+	        do {
+	        	school = new Schools();
+	        	school.setId(Integer.parseInt(cursor.getString(0)));
+	        	school.setAverageTotal(cursor.getString(1));
+	        	school.setSchoolName(cursor.getString(2));
+	        	school.setSector(cursor.getString(3));
+	        	school.setState(cursor.getString(4));
+	        	school.setSuburb(cursor.getString(5));
+	        	schools.add(school);
+	        } while (cursor.moveToNext());
+	    }
+
+	    //Log.d("getSearchedSchool()", school.toString());
+	    // make sure to close the cursor
+	    cursor.close();
+	    return schools;
+	  }
+  
   public List<Schools> getAllComments() {
     List<Schools> schools = new ArrayList<Schools>();
 
