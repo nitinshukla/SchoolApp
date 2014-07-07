@@ -31,6 +31,16 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
   public static final String SECTOR = "sector";
   public static final String SUBURB = "suburb";
   public static final String STATE = "state";
+  public static final String LONGITUDE = "longitude";
+  public static final String LATITUDE = "latitude";
+  public static final String REGION = "region";
+  public static final String ICSEA = "icsea";
+  public static final String PRIMARYSECONDARY = "primary_Secondary";
+  public static final String STREETADDRESS = "street_address";
+  public static final String FAX = "fax";
+  public static final String PHONE = "phone";
+  public static final String EMAIL = "school_email";
+  public static final String POSTCODE = "postcode";
 
   //private static final String DATABASE_NAME = "commments.db";
   private static final String DATABASE_NAME = "greatSchools.db";

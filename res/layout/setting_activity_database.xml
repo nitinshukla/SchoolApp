@@ -106,7 +106,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnSubmit"
+        android:id="@+id/setSettingSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/linearLayout2"

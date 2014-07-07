@@ -1,6 +1,8 @@
 package com.example.sqlitedatabaseapp;
 
 
+import com.google.analytics.tracking.android.EasyTracker;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,7 +21,7 @@ public class SettingPageActivity extends Activity {
 	private Switch mySwitch;
 	private TextView switchStatus;
 	private Spinner spinner1, spinner2,spinner;
-	  private Button btnSubmit;
+	  private Button setSettingSubmit;
 	   @Override
 	    public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
@@ -62,15 +64,15 @@ public class SettingPageActivity extends Activity {
 		spinner = (Spinner) findViewById(R.id.spinner);
 	 	spinner1 = (Spinner) findViewById(R.id.spinner1);
 	 	//spinner2 = (Spinner) findViewById(R.id.spinner2);
-	 	btnSubmit = (Button) findViewById(R.id.btnSubmit);
+	 	setSettingSubmit = (Button) findViewById(R.id.setSettingSubmit);
 	 	mySwitch = (Switch) findViewById(R.id.togglebutton);
 	  
-	 	btnSubmit.setOnClickListener(new OnClickListener() {
+	 	setSettingSubmit.setOnClickListener(new OnClickListener() {
 	  
 	 	  @Override
 	 	  public void onClick(View v) {
 	  
-		    	Intent intent = new Intent(SettingPageActivity.this,SearchResultsActivity.class);
+		    	Intent intent = new Intent(SettingPageActivity.this,MainActivity.class);
 		    	intent.setAction("Settings");
 		    	intent.putExtra("spinner", String.valueOf(spinner.getSelectedItem()));
 		    	intent.putExtra("spinner1", String.valueOf(spinner1.getSelectedItem()));
@@ -121,6 +123,7 @@ public class SettingPageActivity extends Activity {
 	    @Override
 	    protected void onStart() {
 	        super.onStart();
+	        EasyTracker.getInstance(this).activityStart(this);
 	        // The activity is about to become visible.
 	    }
 	    @Override
@@ -137,6 +140,7 @@ public class SettingPageActivity extends Activity {
 	    protected void onStop() {
 	        super.onStop();
 	        // The activity is no longer visible (it is now "stopped")
+	        EasyTracker.getInstance(this).activityStop(this);  
 	    }
 	    @Override
 	    protected void onDestroy() {

@@ -33,6 +33,7 @@
     <string name="action_search">Search</string>
     <string name="Fixed_Header">School Ranking</string>
     <string name="Fixed_Footer">Settings</string>
+    <string name="Redo_Search">Redo Search</string>
     <string name="country_prompt">Choose a country</string>
     <string name="sector_prompt">Choose a Sector</string>
     <string name="state">State</string>
@@ -63,5 +64,8 @@
 	<string name="All_Nearby">All Nearby</string>
 	<string name="Primary">Primary</string>
 	<string name="Secondary">Secondary</string>
-	<string name="searching_hint">City,State or Zip or School Name</string>
+	<string name="searching_hint">City,State,Zip or School Name</string>
+	<string name="filter">Filter</string>
+	<color name="bg_color">#ffffff</color>
 </resources>
+

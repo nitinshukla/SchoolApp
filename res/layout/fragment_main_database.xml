@@ -5,7 +5,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" 
     android:background="@drawable/back">
-  <TableRow
+ <!--  <TableRow
         android:id="@+id/tableRow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,7 +17,7 @@
                          ads:adSize="BANNER"/>
 
 
-    </TableRow>
+    </TableRow> -->
     <!-- just draw a red line -->
     <View
         android:layout_height="2dip"
@@ -90,26 +90,5 @@
              android:textAppearance="?android:attr/textAppearanceMedium"
              android:textColor="#4fa5d5" />
      </TableRow>
-       <TableRow
-        android:id="@+id/tableRow5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="5dip" >
-	
-	<EditText
-	    android:id="@+id/searchSchool"
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-	    android:hint="@string/searching_hint"
-	    android:inputType="text" />
-    </TableRow>  
-
-	
-    <Button
-        android:id="@+id/btnSubmit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit"
-        android:onClick="doSmall" />
-   
+    
 </TableLayout>
