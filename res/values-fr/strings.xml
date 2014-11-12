@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name"><b>Superbe écoles</b></string>
+    <string name="school_name">Nom de l\'école</string>
+    <string name="average_total">Total Moyenne</string>
+    <string name="suburb">Banlieue</string>
+    <string name="search_hint">Entrez Nom de l\'école</string> 
+    <string name="admob_id">pub-6976524541543816</string>
+    <string name="banner_ad_unit_id">ca-app-pub-6976524541543816/6521207881</string>
+    <string name="facebook_app_id">378657585618221</string>
+	<string name="map_app_key">AIzaSyACNA8DbA3-nqmfj7xoKi6grO3yo6jA88I</string>
+    <string-array name="aus_state_list">
+        <item>NSW</item>
+        <item>VIC</item>
+        <item>ACT</item>
+        <item>QLD</item>
+        <item>SA</item>
+        <item>WA</item>
+        <item>NT</item>
+        <item>TAS</item>
+    </string-array>
+
+    <string name="information">Informations</string>
+    <string name="Information_text"><b>SuperbSchools est l\' Australie\'s principale source d\'information sur la performance et notation des différentes écoles . Il a liste de plus de 9000 écoles publiques et privées aider les parents et les élèves choisissent les meilleures écoles de school.SuperbSchools primaires et secondaires est devenu le go-to guide pour les parents visant à faire un choix intelligent de l\'école.</b></string>
+    <string name="action_search">Recherche</string>
+    <string name="Fixed_Footer">Paramètres</string>
+    <string name="Redo_Search">Relancer la recherche</string>
+    <string name="country_prompt">Choisissez un pays</string>
+    <string name="sector_prompt">Choisissez un secteur</string>
+    <string name="state">état</string>
+    <string name="grade">Primaire OR Secondaire</string>
+    <string name="sector">Secteur</string>
+    <string name="primary_secondary">Primaire/Secondaire</string>
+    <string name="superb_schools_rating">Superbe écoles Note</string>
+
+    <string-array name="sector_arrays">
+        <item>Government</item>
+        <item>Non Government</item>
+    </string-array>
+    <string-array name="primsec_arrays">
+        <item>Primary</item>
+        <item>Secondary</item>
+    </string-array>
+    <string-array name="superbschoolsrating_arrays">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string name="Main_text"><b>Carte et comparer les écoles , en fonction de votre emplacement actuel. spectacle:!</b></string>
+    <string name="All_Nearby"><b>Tous proximité</b></string>
+    <string name="Primary"><b>Primaire</b></string>
+    <string name="Secondary"><b>Secondaire</b></string>
+    <string name="searching_hint">Banlieue, Code postal ou nom de l\'école</string>
+    <string name="filter">Filtre</string>
+    <string name="go">Go</string>
+
+    <color name="bg_color">#ffffff</color>
+
+    <string name="school_details"><b>Ecoles Détails</b></string>
+
+    <string name="school_address"><b>Ecoles Adresse</b></string>
+    <string name="school_phone"><b>Schools Phone</b></string>
+    <string name="superb_school_ranking"><b>École Superbe Classement</b></string>
+    <string name="contactUs"><b>Des erreurs avec les données ci-dessus?</b></string>
+    <string name="info_prim_marker">Le marqueur de couleur pourpre indique les écoles primaires et le nombre indique la Note de l\'école de 1 à 10.</string>
+    <string name="info_sec_marker">Le marqueur de couleur verte indique les écoles secondaires et le nombre indique la Note de l\'école de 1 à 10.</string>
+    <string name="info_location_marker">Le marqueur de position vous amène à la page d\'accueil à partir de là vous pouvez rechercher des écoles à proximité.</string>
+    <string name="info_filter_marker">Le marqueur de filtre vous amène à la page de filtre à partir de là , vous pouvez filtrer les écoles en fonction du secteur , de l\'état , une qualification ou primaire et secondaire.</string>
+    <string name="info_search_marker">Le marqueur de recherche vous amène à la page de recherche à partir de là vous pouvez rechercher les écoles en fonction du nom de la banlieue , code postal.</string>
+    <string name="info_redosearch_marker">Le marqueur de recherche redo vous permettra de rechercher la zone sur la carte pour les écoles.</string>
+    <string name="grammar_punctuation">Grammaire/Ponctuation</string>
+    <string name="numeracy">Numératie</string>
+    <string name="writing">écriture</string>
+    <string name="spelling">Orthographe</string>
+    <string name="reading">Lecture</string>
+    <string name="rank">Rang</string>
+    <string name="home">Maison</string>
+
+</resources>

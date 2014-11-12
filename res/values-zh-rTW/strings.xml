@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name"><b>一流的學校</b></string>
+    <string name="school_name">學校名稱</string>
+    <string name="average_total">平均總</string>
+    <string name="suburb">市郊</string>
+    <string name="search_hint">輸入學校名稱</string> 
+    <string name="admob_id">pub-6976524541543816</string>
+    <string name="banner_ad_unit_id">ca-app-pub-6976524541543816/6521207881</string>
+    <string name="facebook_app_id">378657585618221</string>
+	<string name="map_app_key">AIzaSyACNA8DbA3-nqmfj7xoKi6grO3yo6jA88I</string>
+    <string-array name="aus_state_list">
+        <item>NSW</item>
+        <item>VIC</item>
+        <item>ACT</item>
+        <item>QLD</item>
+        <item>SA</item>
+        <item>WA</item>
+        <item>NT</item>
+        <item>TAS</item>
+    </string-array>
+
+    <string name="information">信息</string>
+    <string name="Information_text"><b>SuperbSchools是澳大利亞領先的性能和各個學校的評級信息來源。它擁有超過9000所公立和私立學校，幫助家長和學生選擇了從小學，中學最好的學校名單。 SuperbSchools已成為去，引導家長旨在讓智能擇校.</b></string>
+    <string name="action_search">搜索</string>
+    <!-- <string name="Fixed_Header">School Ranking</string> -->
+    <string name="Fixed_Footer">設置</string>
+    <string name="Redo_Search">重做搜索</string>
+    <string name="country_prompt">選擇一個國家</string>
+    <string name="sector_prompt">選擇一個行業</string>
+    <string name="state">狀態</string>
+    <string name="grade">主 或 次</string>
+    <string name="sector">扇形</string>
+    <string name="primary_secondary">主/次</string>
+    <string name="superb_schools_rating">一流的學校評級</string>
+
+    <string-array name="sector_arrays">
+        <item>Government</item>
+        <item>Non Government</item>
+    </string-array>
+    <string-array name="primsec_arrays">
+        <item>Primary</item>
+        <item>Secondary</item>
+    </string-array>
+    <string-array name="superbschoolsrating_arrays">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string name="Main_text"><b>地圖和比較學校，根據您當前的位置。節目:!</b></string>
+    <string name="All_Nearby"><b>附近所有</b></string>
+    <string name="Primary"><b>主</b></string>
+    <string name="Secondary"><b>次</b></string>
+    <string name="searching_hint">郊區，郵政編碼或學校名稱</string>
+    <string name="filter">過濾器</string>
+    <string name="go">去</string>
+
+    <color name="bg_color">#ffffff</color>
+
+    <string name="school_details"><b>學校詳情</b></string>
+    <string name="school_address"><b>學校地址</b></string>
+    <string name="school_phone"><b>學校電話</b></string>
+    <string name="superb_school_ranking"><b>一流的學校排名</b></string>
+    <string name="contactUs"><b>實測值與上述數據中的任何錯誤?</b></string>
+    <string name="info_prim_marker">紫色的彩色標記顯示了小學和數字表示，學校從1到10的評分.</string>
+    <string name="info_sec_marker">在綠色的標誌顯示了中學和數字表示，學校從1到10的評分.</string>
+    <string name="info_location_marker">位置標記將帶你到主頁面，你可以從那裡搜索附近的學校.</string>
+    <string name="info_filter_marker">該過濾器標記將帶你到過濾器頁面從那裡，你可以根據部門，國家，評級或中小學學校篩選.</string>
+    <string name="info_search_marker">搜索標記會帶你到搜索頁面，你可以從那裡尋找學校的基礎上的郊區名稱，郵政編碼.</string>
+    <string name="info_redosearch_marker">重做搜索標記可以讓你搜索的區域地圖的學校.</string>
+    <string name="grammar_punctuation">語法/標點</string>
+    <string name="numeracy">識數</string>
+    <string name="writing">寫作</string>
+    <string name="spelling">拼字</string>
+    <string name="reading">閱讀</string>
+    <string name="rank">秩</string>
+    <string name="home">家</string>
+
+</resources>

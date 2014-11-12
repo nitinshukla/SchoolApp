@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name"><b>최고의 학교</b></string>
+<!--     <string name="hello_world">Hello world!</string>
+    <string name="hello">Hello!</string> -->
+    <!-- <string name="Add_New">Add New!</string> -->
+    <!-- <string name="Delete_First">Delete First!</string> -->
+<!--     <string name="action_settings">Settings</string> -->
+    <!-- <string name="edit_message">Enter a message</string> -->
+    <string name="school_name">학교 이름</string>
+    <string name="average_total">평균 총</string>
+    <!-- <string name="sector">Sector</string> -->
+    <string name="suburb">근교</string>
+    <!-- <string name="state">state</string> -->
+    <!-- <string name="FooterText">Footer Text</string> -->
+<!--     <string name="HeaderText">Header Text</string>
+    <string name="HeaderText1">Header Text</string> -->
+     <string name="search_hint">학교 이름을 입력합니다</string> 
+    <string name="admob_id">pub-6976524541543816</string>
+    <string name="banner_ad_unit_id">ca-app-pub-6976524541543816/6521207881</string>
+    <string name="facebook_app_id">378657585618221</string>
+	<string name="map_app_key">AIzaSyACNA8DbA3-nqmfj7xoKi6grO3yo6jA88I</string>
+    <string-array name="aus_state_list">
+        <item>NSW</item>
+        <item>VIC</item>
+        <item>ACT</item>
+        <item>QLD</item>
+        <item>SA</item>
+        <item>WA</item>
+        <item>NT</item>
+        <item>TAS</item>
+    </string-array>
+
+    <string name="information">정보</string>
+    <string name="Information_text"><b>SuperbSchools is the Australia\'s leading source of information on performance and ratings of various schools. It has listing of over 9000 public and private schools helping parents and students choose best schools from primary and secondary school.SuperbSchools has become the go-to guide for parents aiming to make a smart school choice.</b></string>
+    <string name="action_search">수색</string>
+    <!-- <string name="Fixed_Header">School Ranking</string> -->
+    <string name="Fixed_Footer">설정</string>
+    <string name="Redo_Search">검색 을 다시 실행</string>
+    <string name="country_prompt">국가를 선택하십시오</string>
+    <string name="sector_prompt">섹터를 선택</string>
+    <string name="state">상태</string>
+    <string name="grade">기본 또는 보조</string>
+    <string name="sector">부문</string>
+    <string name="primary_secondary">차/보조</string>
+    <string name="superb_schools_rating">최고의 학교 평가</string>
+
+    <string-array name="sector_arrays">
+        <item>Government</item>
+        <item>Non Government</item>
+    </string-array>
+    <string-array name="primsec_arrays">
+        <item>Primary</item>
+        <item>Secondary</item>
+    </string-array>
+    <string-array name="superbschoolsrating_arrays">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+   <!--  <string name="title_activity_show_location">ShowLocationActivity</string> -->
+    <!-- <string name="store_car_location">Store My Location</string> -->
+    <!-- <string name="find_car">Find Me</string> -->
+   <!--  <string name="title_activity_main_database">MainDatabaseActivity</string> -->
+    <string name="Main_text"><b>지도 와 현재 위치를 기반으로 , 학교를 비교합니다. 보기 :!</b></string>
+    <string name="All_Nearby"><b>주변의 모든</b></string>
+    <string name="Primary"><b>차</b></string>
+    <string name="Secondary"><b>보조</b></string>
+    <string name="searching_hint">교외 , 우편 번호 또는 학교 이름</string>
+    <string name="filter">필터</string>
+    <string name="go">가기</string>
+
+    <color name="bg_color">#ffffff</color>
+
+    <string name="school_details"><b>학교 세부 사항</b></string>
+    <!-- <string name="school_name"><b>Schools Name</b></string> -->
+    <string name="school_address"><b>학교 주소</b></string>
+    <string name="school_phone"><b>학교 전화</b></string>
+    <string name="superb_school_ranking"><b>최고의 학교 순위</b></string>
+    <string name="contactUs"><b>위의 데이터 와 오류 발견?</b></string>
+    <string name="info_prim_marker">보라색 컬러 마커 는 초등학교 를 보여 수는 1-10 학교의 평가 를 보여줍니다.</string>
+    <string name="info_sec_marker">녹색 컬러 마커 는 중등 학교 를 보여 수는 1-10 학교의 평가 를 보여줍니다.</string>
+    <string name="info_location_marker">당신이 근처에 학교 를 검색 할 수 있습니다 거기에서위치 마커 메인 페이지로 이동합니다.</string>
+    <string name="info_filter_marker">당신이 부문 , 상태 , 등급 또는 기본 및 보조 에 따라 학교 를 필터링 할 수 있습니다 거기에서필터 마커 필터 페이지로 이동합니다.</string>
+    <string name="info_search_marker">당신이 학교를 검색 할 수 있습니다 거기에서 검색 마커 교외 이름 , 우편 번호 를 기반으로 검색 페이지로 이동합니다.</string>
+    <string name="info_redosearch_marker">리두 검색 마커 는 학교 지도에서 지역 을 검색 할 수있는 기능을 제공한다.</string>
+    <string name="grammar_punctuation">문법 / 문장 부호</string>
+    <string name="numeracy">수리</string>
+    <string name="writing">쓰기</string>
+    <string name="spelling">철자</string>
+    <string name="reading">독서</string>
+    <string name="rank">계급</string>
+    <string name="home">홈</string>
+
+</resources>
