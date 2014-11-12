@@ -1,0 +1,213 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backwhite">
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="5dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="5dp" >
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center" >
+
+        <View
+            style="@style/HorizontalLineRed"
+            android:layout_above="@+id/informationText"
+            android:layout_alignParentLeft="true" />
+
+        <View
+            style="@style/HorizontalLineRed"
+            android:layout_below="@+id/informationText"
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:id="@+id/informationText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Information_text"
+            android:textColor="@color/purple"
+            android:textSize="14sp"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="10dp"
+            android:typeface="monospace" />
+                    <!-- android:layout_toRightOf="@+id/nearby" -->
+        <ImageView
+            android:id="@+id/primaryImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+			android:layout_marginTop="10dp"            
+            android:layout_marginLeft="10dp"
+			android:layout_alignParentLeft="true"
+            android:layout_below="@+id/informationText"
+            android:contentDescription="@string/filter"
+            android:src="@drawable/number_1" />
+        <TextView
+            android:id="@+id/schoolPrimImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:text="@string/info_prim_marker"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/primaryImg"
+            android:layout_below="@id/informationText"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" />         
+        <ImageView
+            android:id="@+id/secondaryImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+			android:layout_marginTop="32dp"            
+            android:layout_marginLeft="10dp"
+			android:layout_alignParentLeft="true"
+            android:layout_below="@+id/primaryImg"
+            android:contentDescription="@string/filter"
+            android:src="@drawable/number_1s" />        
+        <TextView
+            android:id="@+id/schoolSecImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:text="@string/info_sec_marker"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/secondaryImg"
+            android:layout_below="@id/schoolPrimImg"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" />         
+        <ImageView
+            android:id="@+id/locationImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+			android:layout_marginTop="30dp"            
+            android:layout_marginLeft="10dp"
+			android:layout_alignParentLeft="true"
+            android:layout_below="@+id/secondaryImg"
+            android:contentDescription="@string/filter"
+            android:src="@drawable/location" />        
+        <TextView
+            android:id="@+id/locationTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:text="@string/info_location_marker"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/locationImg"
+            android:layout_below="@id/schoolSecImg"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" />  
+        <ImageView
+            android:id="@+id/filterImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+			android:layout_marginTop="32dp"            
+            android:layout_marginLeft="10dp"
+			android:layout_alignParentLeft="true"
+            android:layout_below="@+id/locationImg"
+            android:contentDescription="@string/filter"
+            android:src="@drawable/filter" />        
+        <TextView
+            android:id="@+id/filterText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:text="@string/info_filter_marker"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/filterImg"
+            android:layout_below="@id/locationTxt"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" />    
+        <ImageView
+            android:id="@+id/filterImg1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+			android:layout_marginTop="28dp"            
+            android:layout_marginLeft="10dp"
+			android:layout_alignParentLeft="true"
+            android:layout_below="@+id/filterImg"
+            android:contentDescription="@string/filter"
+            android:src="@drawable/search" />        
+        <TextView
+            android:id="@+id/filterText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:text="@string/info_filter_marker"
+            android:textStyle="bold"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@+id/filterImg1"
+            android:layout_below="@id/filterText"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" />         
+        <ImageView
+            android:id="@+id/redoSearchImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+			android:layout_marginTop="28dp"            
+            android:layout_marginLeft="10dp"
+			android:layout_alignParentLeft="true"
+            android:layout_below="@+id/filterImg1"
+            android:contentDescription="@string/filter"
+            android:src="@drawable/spinner" />        
+        <TextView
+            android:id="@+id/redoSearchText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:text="@string/info_redosearch_marker"
+            android:textStyle="bold"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@+id/redoSearchImg"
+            android:layout_below="@id/filterText1"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" />  
+
+		<TextView
+		 	android:id="@+id/tvContactDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/redBright"
+            android:textSize="12sp"
+            android:textStyle="bold"
+		    android:layout_below="@id/redoSearchText"
+		    android:layout_alignParentRight="true"
+		    android:layout_marginBottom="10dp"
+            android:background="@color/white"/>    
+
+         <TextView
+		 	android:id="@+id/versionDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            android:textStyle="bold"
+		    android:layout_below="@id/tvContactDetails"
+		    android:layout_alignParentRight="true"
+		    android:layout_marginBottom="10dp"
+            android:background="@color/white"/> 		
+    </RelativeLayout>
+</RelativeLayout>    
+</ScrollView>

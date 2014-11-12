@@ -8,11 +8,14 @@
     <TextView
         android:id="@+id/tv_lat"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content" 
+        android:drawablePadding="5dp"
+        android:singleLine="true"/>
  
     <TextView
         android:id="@+id/tv_lng"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content" 
+        android:drawableRight="@drawable/arrowright" />
  
 </LinearLayout>

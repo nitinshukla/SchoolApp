@@ -5,11 +5,11 @@ tools:ignore="TypographyDashes">
   <!--Replace placeholder ID with your tracking ID-->
   <string name="ga_trackingId">UA-52342398-1</string>
 
-  <string name="ga_appName">GreatSchoolsAustralia</string>
+  <string name="ga_appName">SuperbSchoolsAustralia</string>
   <string name="ga_appVersion">1.0</string>
   <integer name="ga_dispatchPeriod">10</integer>
 
-  <string name="com.example.sqlitedatabaseapp">MainActivity</string>
+  <string name="com.superbschools.mobile">MainActivity</string>
   <bool name="ga_debug">true</bool>
   
   <!--Enable automatic activity tracking-->

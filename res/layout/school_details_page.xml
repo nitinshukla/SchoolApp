@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backwhite">
+
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp" 
+    android:paddingTop="16dp"  >
+
+        <TextView
+            android:id="@+id/schoolName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:gravity="center"
+            android:textColor="@color/purple"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+         <TextView
+            android:id="@+id/schoolSector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_below="@id/schoolName"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/schoolPrimSec"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" />
+
+        <TextView
+            android:id="@+id/schoolPrimSec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_below="@id/schoolName"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" />          
+        
+
+        <TextView
+            android:id="@+id/schoolAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_below="@id/schoolSector"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentLeft="true" 
+            android:background="@color/white"/>        
+
+			           
+        <TextView
+            android:id="@+id/schoolPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_below="@id/schoolAddress"
+            android:layout_toLeftOf="@+id/schoolFax"
+            android:layout_alignParentLeft="true" 
+            android:layout_marginTop="10dp"
+            android:background="@color/white"/>
+
+        <TextView
+            android:id="@+id/schoolFax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_below="@id/schoolAddress"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" /> 
+
+        <TextView
+            android:id="@+id/schoolEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_below="@id/schoolFax"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" /> 
+        <TextView
+            android:id="@+id/schoolWebsite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_below="@id/schoolEmail"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" />      
+ 
+        <TextView
+            android:id="@+id/schoolRankPrimaryText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rank"
+            android:textColor="@color/redBright"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_toLeftOf="@+id/schoolRank"
+            android:layout_below="@id/schoolWebsite"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" />
+        		
+         <TextView
+            android:id="@+id/schoolRank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/redBright"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_below="@id/schoolWebsite"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" />
+		
+        <TextView
+            android:id="@+id/readingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reading"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_toLeftOf="@+id/reading"
+            android:layout_below="@id/schoolRankPrimaryText"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" />
+                 
+         <TextView
+            android:id="@+id/reading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_below="@id/schoolRank"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" /> 
+
+        <TextView
+            android:id="@+id/GrampuncText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/grammar_punctuation"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_toLeftOf="@+id/Grampunc"
+            android:layout_below="@id/readingText"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" />         
+         <TextView
+            android:id="@+id/Grampunc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_below="@id/reading"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" />   
+
+        <TextView
+            android:id="@+id/NumeracyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/numeracy"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_toLeftOf="@+id/Numeracy"
+            android:layout_below="@id/GrampuncText"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" />  
+                     
+         <TextView
+            android:id="@+id/Numeracy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_below="@id/Grampunc"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" />         
+
+        <TextView
+            android:id="@+id/WritingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/writing"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_toLeftOf="@+id/Writing"
+            android:layout_below="@id/NumeracyText"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" />           
+         <TextView
+            android:id="@+id/Writing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_below="@id/Numeracy"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" />   
+
+        <TextView
+            android:id="@+id/SpellingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/spelling"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_toLeftOf="@+id/Spelling"
+            android:layout_below="@id/WritingText"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" />          
+         <TextView
+            android:id="@+id/Spelling"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_below="@id/Writing"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:background="@color/white" /> 
+                     
+         <TextView
+            android:id="@+id/contactUs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/redBright"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:autoLink="web"
+            android:text="@string/contactUs"
+            android:layout_below="@id/Spelling"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:background="@color/white" /> 
+
+		<TextView
+		 	android:id="@+id/tvContactDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/redBright"
+            android:textSize="16sp"
+            android:textStyle="bold"
+		    android:layout_below="@id/contactUs"
+		    android:layout_alignParentRight="true"
+		    android:layout_marginBottom="10dp"
+            android:background="@color/white"/>
+
+		<View
+		    style="@style/HorizontalLine"
+		    android:layout_alignParentLeft="true"
+		    android:layout_below="@+id/schoolRankPrimaryText" />
+
+		<View
+		    style="@style/HorizontalLine"
+		    android:layout_alignParentLeft="true"
+		    android:layout_below="@+id/SpellingText" />				
+         
+   </RelativeLayout>             
+</ScrollView>
+ 

@@ -1,0 +1,121 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backwhite"
+    android:paddingBottom="5dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="4dp"
+    tools:context=".LocaterMapActivity" >
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center" >
+
+        <AutoCompleteTextView
+            android:id="@+id/myautocomplete"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:completionThreshold="3"
+            android:hint="@string/searching_hint" />
+
+         <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/mapview"
+            android:layout_alignRight="@+id/mapview"
+            android:onClick="doSearchedText"
+            android:text="@string/go"
+            android:shadowColor="@color/black"
+            android:textAppearance="?android:attr/textAppearanceSmall" /> 
+
+        <fragment
+            android:id="@+id/mapview"
+            android:name="com.google.android.gms.maps.MapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/myautocomplete" />
+    </RelativeLayout>
+    <!-- android:text="@string/Fixed_Footer" -->
+
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="@color/white"
+        android:gravity="center" >
+
+        <ImageView
+            android:id="@+id/nearby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:contentDescription="@string/All_Nearby"
+            android:src="@drawable/location" />
+
+        <TextView
+            android:id="@+id/nearbyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/nearby"
+            android:layout_marginLeft="20dp"
+            android:text="@string/home"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="300dp"
+            android:layout_toRightOf="@+id/nearby"
+            android:contentDescription="@string/filter"
+            android:src="@drawable/filter" />
+
+        <TextView
+            android:id="@+id/settingsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/settings"
+            android:layout_marginLeft="300dp"
+            android:layout_toRightOf="@+id/nearbyText"
+            android:text="@string/filter"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/redoSearchText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/redoSearch"
+            android:text="@string/Redo_Search"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/redoSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/settingsText"
+            android:layout_alignLeft="@+id/redoSearchText"
+            android:contentDescription="@string/Redo_Search"
+            android:src="@drawable/spinner" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

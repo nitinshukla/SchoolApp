@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
-	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" path="gen"/>
-	<classpathentry exported="true" kind="lib" path="C:/adt-bundle-windows-x86_64-20140321/adt-bundle-windows-x86_64-20140321/sdk/extras/google/google_play_services/libproject/google-play-services_lib/libs/google-play-services.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="file:/C:/adt-bundle-windows-x86_64-20140321/adt-bundle-windows-x86_64-20140321/sdk/extras/google/google_play_services/libproject/google-play-services_lib/libs/../../../docs/reference/"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="C:/adt-bundle-windows-x86_64-20140321/adt-bundle-windows-x86_64-20140321/sdk/add-ons/addon-google_apis_x86-google-19/libs/maps.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="file:/C:/adt-bundle-windows-x86_64-20140321/adt-bundle-windows-x86_64-20140321/sdk/add-ons/addon-google_apis_x86-google-19/docs/reference"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry exported="true" kind="lib" path="libs/libGoogleAnalyticsServices.jar"/>
-	<classpathentry exported="true" kind="lib" path="C:/Users/psrivastava/workspace/appcompat_v7_6/libs/android-support-v4.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Pankaj/google-play-services_lib/libs/google-play-services.jar"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry exported="true" kind="lib" path="C:/Pankaj/facebook-android-sdk-3.19.1/facebook-android-sdk-3.19.1/facebook/bin/facebooksdk.jar" sourcepath="/FacebookSDK/src"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

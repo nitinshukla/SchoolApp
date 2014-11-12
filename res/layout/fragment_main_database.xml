@@ -1,94 +1,113 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/tableLayout1"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent" 
-    android:background="@drawable/back">
- <!--  <TableRow
-        android:id="@+id/tableRow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="5dip" >
-   		<com.google.android.gms.ads.AdView android:id="@+id/adView"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         ads:adUnitId="pub-6976524541543816"
-                         ads:adSize="BANNER"/>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backwhite"
+    android:paddingBottom="5dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="5dp"
+    tools:context=".MainDatabaseActivity" >
 
-
-    </TableRow> -->
-    <!-- just draw a red line -->
-    <View
-        android:layout_height="2dip"
-        android:background="#FF0000" />
- 
-    <TableRow
-        android:id="@+id/tableRow1"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dip" >
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center" 
+        android:background="@drawable/cell_shape">
+
+        <View
+            style="@style/HorizontalLineRed"
+            android:layout_above="@+id/mainText"
+            android:layout_alignParentLeft="true" />
+
+        <View
+            style="@style/HorizontalLineRed"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/mainText"
+            android:layout_marginTop="20dp" />
+
         <TextView
-        android:id="@+id/mainText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Main_text"/> 
+            android:id="@+id/mainText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/Main_text"
+            android:textColor="@color/purple"
+            android:textSize="20sp"
+            android:typeface="monospace" 
+            />
 
-    </TableRow>
- 
-    <!-- just draw a red line -->
-    <View
-        android:layout_height="2dip"
-        android:background="#FF0000" />
-    <TableRow
-        android:id="@+id/tableRow2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="2dip" >
- 
-		<TextView
-        android:id="@+id/AllNearby"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/All_Nearby" 
-        android:textColor="#4fa5d5"
-        android:layout_gravity="center"
-        android:textAppearance="?android:attr/textAppearanceMedium"/>
+        <TextView
+            android:id="@+id/AllNearby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mainText"
+            android:layout_gravity="left"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:drawablePadding="15dp"
+            android:drawableRight="@drawable/arrowright"
+            android:onClick="doSmall"
+            android:text="@string/All_Nearby"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/moderateBlue" 
+            />
 
-    </TableRow>
- 
-     <TableRow
-        android:id="@+id/tableRow3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="2dip">
- 
-         <TextView
-        android:id="@+id/Primary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/Primary"
-        android:textColor="#4fa5d5"
-        android:onClick="doSmall" 
-        android:layout_gravity="center"
-        android:textAppearance="?android:attr/textAppearanceMedium"/>
+        <TextView
+            android:id="@+id/Primary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/AllNearby"
+            android:layout_gravity="left"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:drawablePadding="15dp"
+            android:drawableRight="@drawable/arrowright"
+            android:onClick="doSmall"
+            android:text="@string/Primary"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/moderateBlue" />
 
-    </TableRow>
+        <TextView
+            android:id="@+id/Secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Primary"
+            android:layout_gravity="left"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:drawablePadding="15dp"
+            android:drawableRight="@drawable/arrowright"
+            android:text="@string/Secondary"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/moderateBlue" />
+<!--         <ImageView
+            android:id="@+id/nearby"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Secondary"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="120dp"
+            android:contentDescription="@string/All_Nearby"
+            android:src="@drawable/school43128px" /> -->
+        <fragment
+            android:id="@+id/adFragmentPlcHolder"
+            android:name="com.superbschools.mobile.MainDatabaseActivity$PlaceholderFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/adFragment" />
 
-     <TableRow
-         android:id="@+id/tableRow4"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:padding="2dip" >
+        <fragment
+            android:id="@+id/adFragment"
+            android:name="com.superbschools.mobile.MainDatabaseActivity$AdFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
 
-         <TextView
-             android:id="@+id/Secondary"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_gravity="center"
-             android:text="@string/Secondary"
-             android:textAppearance="?android:attr/textAppearanceMedium"
-             android:textColor="#4fa5d5" />
-     </TableRow>
-    
-</TableLayout>
+ </RelativeLayout>

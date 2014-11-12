@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">GreatSchoolsAustralia</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="hello">Hello!</string>
-    <string name="Add_New">Add New!</string>
-    <string name="Delete_First">Delete First!</string>
-    <string name="action_settings">Settings</string>
-    <string name="edit_message">Enter a message</string>
+    <string name="app_name"><b>Superb Schools</b></string>
+<!--     <string name="hello_world">Hello world!</string>
+    <string name="hello">Hello!</string> -->
+    <!-- <string name="Add_New">Add New!</string> -->
+    <!-- <string name="Delete_First">Delete First!</string> -->
+<!--     <string name="action_settings">Settings</string> -->
+    <!-- <string name="edit_message">Enter a message</string> -->
     <string name="school_name">School Name</string>
     <string name="average_total">Average Total</string>
     <!-- <string name="sector">Sector</string> -->
     <string name="suburb">suburb</string>
     <!-- <string name="state">state</string> -->
-    <string name="FooterText">Footer Text</string>
-    <string name="HeaderText">Header Text</string>
-    <string name="HeaderText1">Header Text</string>
-    <string name="search_hint">Enter School Name</string>
-
+    <!-- <string name="FooterText">Footer Text</string> -->
+<!--     <string name="HeaderText">Header Text</string>
+    <string name="HeaderText1">Header Text</string> -->
+     <string name="search_hint">Enter School Name</string> 
+    <string name="admob_id">pub-6976524541543816</string>
+    <string name="banner_ad_unit_id">ca-app-pub-6976524541543816/6521207881</string>
+    <string name="facebook_app_id">378657585618221</string>
+	<string name="map_app_key">AIzaSyACNA8DbA3-nqmfj7xoKi6grO3yo6jA88I</string>
     <string-array name="aus_state_list">
-        <item>Australia-Wide</item>
         <item>NSW</item>
         <item>VIC</item>
         <item>ACT</item>
@@ -30,42 +32,73 @@
         <item>TAS</item>
     </string-array>
 
+    <string name="information">Information</string>
+    <string name="Information_text"><b>SuperbSchools is the Australia\'s leading source of information on performance and ratings of various schools. It has listing of over 9000 public and private schools helping parents and students choose best schools from primary and secondary school.SuperbSchools has become the go-to guide for parents aiming to make a smart school choice.</b></string>
     <string name="action_search">Search</string>
-    <string name="Fixed_Header">School Ranking</string>
+    <!-- <string name="Fixed_Header">School Ranking</string> -->
     <string name="Fixed_Footer">Settings</string>
     <string name="Redo_Search">Redo Search</string>
     <string name="country_prompt">Choose a country</string>
     <string name="sector_prompt">Choose a Sector</string>
     <string name="state">State</string>
+    <string name="grade">Primary OR Secondary</string>
     <string name="sector">Sector</string>
     <string name="primary_secondary">Primary/Secondary</string>
+    <string name="superb_schools_rating">Superb Schools Rating</string>
 
-    <string-array name="country_arrays">
-        <item>Malaysia</item>
-        <item>United States</item>
-        <item>Indonesia</item>
-        <item>France</item>
-        <item>Italy</item>
-        <item>Singapore</item>
-        <item>New Zealand</item>
-        <item>India</item>
-    </string-array>
     <string-array name="sector_arrays">
-        <item>All</item>
         <item>Government</item>
         <item>Non Government</item>
     </string-array>
+    <string-array name="primsec_arrays">
+        <item>Primary</item>
+        <item>Secondary</item>
+    </string-array>
+    <string-array name="superbschoolsrating_arrays">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
 
-    <string name="title_activity_show_location">ShowLocationActivity</string>
-    <string name="store_car_location">Store My Location</string>
-    <string name="find_car">Find Me</string>
-    <string name="title_activity_main_database">MainDatabaseActivity</string>
-	<string name="Main_text">Map and compare schools, based on your current location. Show:!</string>
-	<string name="All_Nearby">All Nearby</string>
-	<string name="Primary">Primary</string>
-	<string name="Secondary">Secondary</string>
-	<string name="searching_hint">City,State,Zip or School Name</string>
-	<string name="filter">Filter</string>
-	<color name="bg_color">#ffffff</color>
+   <!--  <string name="title_activity_show_location">ShowLocationActivity</string> -->
+    <!-- <string name="store_car_location">Store My Location</string> -->
+    <!-- <string name="find_car">Find Me</string> -->
+   <!--  <string name="title_activity_main_database">MainDatabaseActivity</string> -->
+    <string name="Main_text"><b>Map and compare schools, based on your current location. Show:!</b></string>
+    <string name="All_Nearby"><b>All Nearby</b></string>
+    <string name="Primary"><b>Primary</b></string>
+    <string name="Secondary"><b>Secondary</b></string>
+    <string name="searching_hint">Suburb,Postcode or School Name</string>
+    <string name="filter">Filter</string>
+    <string name="go">Go</string>
+
+    <color name="bg_color">#ffffff</color>
+
+    <string name="school_details"><b>Schools Details</b></string>
+    <!-- <string name="school_name"><b>Schools Name</b></string> -->
+    <string name="school_address"><b>Schools Address</b></string>
+    <string name="school_phone"><b>Schools Phone</b></string>
+    <string name="superb_school_ranking"><b>Superb School Ranking</b></string>
+    <string name="contactUs"><b>Found any error with the above data?</b></string>
+    <string name="info_prim_marker">The purple coloured marker shows the primary schools and the number shows the Rating of the school from 1 to 10.</string>
+    <string name="info_sec_marker">The green coloured marker shows the secondary schools and the number shows the Rating of the school from 1 to 10.</string>
+    <string name="info_location_marker">The location marker will take you to the main page from there you can search for nearby schools.</string>
+    <string name="info_filter_marker">The filter marker will take you to the filter page from there you can filter schools based on sector, state, rating or primary and secondary.</string>
+    <string name="info_search_marker">The search marker will take you to the search page from there you can search schools based on suburb name, post code.</string>
+    <string name="info_redosearch_marker">The redo search marker will let you search the area on the map for schools.</string>
+    <string name="grammar_punctuation">Grammar/Punctuation</string>
+    <string name="numeracy">Numeracy</string>
+    <string name="writing">Writing</string>
+    <string name="spelling">Spelling</string>
+    <string name="reading">Reading</string>
+    <string name="rank">Rank</string>
+    <string name="home">Home</string>
+
 </resources>
-

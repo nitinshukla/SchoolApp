@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.sqlitedatabaseapp"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    package="com.superbschools.mobile"
+    android:versionCode="3"
+    android:versionName="3.0" >
 
-    	<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="19" />
+    	<uses-sdk android:minSdkVersion="13" android:targetSdkVersion="21" />
+    	<uses-feature android:name="android.hardware.telephony" android:required="false" />
     	<uses-feature android:glEsVersion="0x00020000" android:required="true"/>
-    	<permission android:name="com.example.sqlitedatabaseapp.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
+    	<permission android:name="com.superbschools.mobile.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
 
     	<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
 		<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
@@ -27,83 +28,76 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name" >
+        android:label="@string/app_name" 
+        android:theme="@style/AppTheme"
+        android:name=".AnalyticsSuperbSchoolsApp">
         <uses-library android:name="com.google.android.maps" />
         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
-        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyACNA8DbA3-nqmfj7xoKi6grO3yo6jA88I"/>
-        <!-- <meta-data
-            android:name="android.app.default_searchable"
-            android:value=".SearchResultsActivity" /> -->
-        
-        <activity
-            android:name="com.example.sqlitedatabaseapp.MainActivity"
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="@string/map_app_key"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+         <activity
+            android:name="com.superbschools.mobile.MainActivity"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.Holo.Light"
-            android:parentActivityName="com.example.sqlitedatabaseapp.TestDatabaseActivity" >
-        </activity>   
-             
-        <activity
-            android:name="com.example.sqlitedatabaseapp.ShowLocationActivity"
-            android:label="@string/app_name"
-            android:theme="@android:style/Theme.Holo.Light"
-            android:parentActivityName="com.example.sqlitedatabaseapp.TestDatabaseActivity" >
-        </activity>
-        <activity
-            android:name="com.example.sqlitedatabaseapp.MainDatabaseActivity"
-            android:label="@string/app_name"
-            android:theme="@android:style/Theme.Holo.Light" >
-                <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>  
-        </activity>
-         <activity android:name="com.google.android.gms.ads.AdActivity"
-             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
-        <activity
-            android:name="com.example.sqlitedatabaseapp.TestDatabaseActivity"
-            android:label="@string/app_name"
-            android:theme="@android:style/Theme.Holo.Light" >
-            <meta-data
-                android:name="android.app.searchable"
-                android:resource="@xml/searchable" />
-        </activity>
-        
-        <activity
-            android:name="com.example.sqlitedatabaseapp.SearchResultsActivity"
-            android:label="@string/app_name"
-            android:launchMode="singleTop"
-            android:parentActivityName="com.example.sqlitedatabaseapp.TestDatabaseActivity"
-            android:theme="@android:style/Theme.Holo.Light" >
-            <intent-filter>
-                <action android:name="android.intent.action.SEARCH" />
-            </intent-filter>
+            android:parentActivityName="com.superbschools.mobile.MainDatabaseActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
-
-            <meta-data
-                android:name="android.app.searchable"
-                android:resource="@xml/searchable" />
-            <meta-data
+  
+             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.sqlitedatabaseapp.TestDatabaseActivity" />
+                android:value="com.superbschools.mobile.MainDatabaseActivity" />  
         </activity>
-        <activity
-            android:name="com.example.sqlitedatabaseapp.SettingPageActivity"
+         <activity
+            android:name="com.superbschools.mobile.InformationActivity"
             android:label="@string/app_name"
-            android:launchMode="singleTop"
-            android:parentActivityName="com.example.sqlitedatabaseapp.SettingPageActivity"
-            android:theme="@android:style/Theme.Holo.Light" >
+            android:parentActivityName="com.superbschools.mobile.MainDatabaseActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
   
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.sqlitedatabaseapp.TestDatabaseActivity" />
-        </activity>
+                android:value="com.superbschools.mobile.MainDatabaseActivity" /> 
+        </activity>   
+         <activity
+            android:name="com.superbschools.mobile.SchoolDetailsActivity"
+            android:label="@string/app_name"
+            android:parentActivityName="com.superbschools.mobile.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+  
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.superbschools.mobile.MainActivity" /> 
+        </activity>            
 
+        <activity
+            android:name="com.superbschools.mobile.MainDatabaseActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>  
+        </activity>
+   
+        <activity
+            android:name="com.superbschools.mobile.SettingPageActivity"
+            android:label="@string/app_name"
+            android:parentActivityName="com.superbschools.mobile.MainDatabaseActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+  
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.superbschools.mobile.MainDatabaseActivity" /> 
+        </activity>
+        <!--Include the AdActivity configChanges and theme. -->
+        <activity android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" />
     </application>
 
 </manifest>
